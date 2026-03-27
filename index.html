@@ -6,10 +6,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
         <style>
-            @media (orientation: portrait){
-            body{-webkit-user-select: none; -moz-user-select: none; -ms-use-selectn: one; user-select: none;}
+            @media (orientation: landscape){
+            body{-webkit-user-select: none; -moz-user-select: none; -ms-use-select: none; user-select: none;}
             body div{
-                font-size: 25px;
+                font-size: 30px;
                 font-weight: bold;
                 display: flex;
                 justify-content: center;
@@ -77,6 +77,115 @@
                 width: 50px;
                 height: 50px;
                 top: 50%;
+                transform: translate(-50%, -50%);
+                border: 5px solid rgb(200, 200, 200);
+                transition-duration: 0.5s;
+            }
+            #AL1 .Keypad{transition-duration: 0.45s;}
+            #AL1 .Keypad:active{
+                transition-duration: 0.05s;
+                border: 5px solid black;
+            }
+
+            #Cancel{left: 95%; opacity: 0;}
+            #Cancel:active{opacity: 1;}
+
+            .Block{
+                position: absolute;
+                width: 0%;
+                height: 15%;
+                top: 85%;
+                left: 87.5%;
+                transform: translate(-50%, -50%);
+                border: 3px solid rgb(200, 200, 200);
+            }
+            #BBlock{left: 72.5%;}
+
+            #N{
+                position: absolute;
+                top: 81%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 15px;
+            }
+            }
+            @media (orientation: portrait){
+            body{-webkit-user-select: none; -moz-user-select: none; -ms-use-select: none; user-select: none;}
+            body div{
+                font-size: 30px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Roboto", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 900;
+                font-style: normal;
+                font-variation-settings: "wdth" 100;
+                white-space: pre-line;
+                text-align: center;
+            }
+
+            #Plate{
+                position: absolute;
+                width: 80%;
+                height: 95%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(233, 233, 233);
+            }
+            #Problem{
+                position: absolute;
+                width: 80%;
+                height: 100%;
+                top: 50%;
+                left: 40%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(221, 221, 221);
+            }
+            #Answer{
+                position: absolute;
+                width: 20%;
+                height: 100%;
+                top: 50%;
+                left: 90%;
+                transform: translate(-50%, -50%);
+            }
+
+            .Line{
+                z-index: 0;
+                position: absolute;
+                width: 10%;
+                height: 100%;
+                top: 50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(122, 122, 122);
+            }
+            #L1{left: 10%;}
+            #L2{left: 20%;}
+            #L3{left: 30%;}
+            #L4{left: 40%;}
+            #L5{left: 50%;}
+            #L6{left: 60%;}
+            #L7{left: 70%;}
+            #L8{left: 80%;}
+            #L9{left: 90%;}
+            #AL1{left: 50%;}
+
+            .R1{top: 20%;}
+            .R2{top: 35%;}
+            .R3{top: 50%;}
+            .R4{top: 65%;}
+            .R5{top: 80%;}
+
+            .Keypad{
+                z-index: -111111;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                left: 50%;
                 transform: translate(-50%, -50%);
                 border: 5px solid rgb(200, 200, 200);
                 transition-duration: 0.5s;
@@ -203,6 +312,7 @@
             var GiveOn = false
 
             function Click(Num){
+                console.log('dd')
                 if(GiveOn == false){
                     if (Ready[0] == Num){
                         item = document.getElementById(Ready[0])
@@ -261,7 +371,6 @@
                         console.log(Ready)
                     }
                 }
-
                 Code += Num
                 Code = Code.substr(1)
                 if (Code == '111111'){Code = "000000"; openFile()}
