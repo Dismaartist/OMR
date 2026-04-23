@@ -335,8 +335,12 @@
                     }
                 }else{
                     item = document.getElementById(Num)
-                    item.style.borderColor = "rgb(151, 193, 169)"
-                    item.textContent = Correct[Num - 1]
+                    if (item.textContent == "-" || item.textContent == Correct[Num - 1] || item.style.borderColor == "rgb(255, 150, 138)"){
+                        item.style.borderColor = "rgb(151, 193, 169)"
+                        item.textContent = Correct[Num - 1]
+                    }else{
+                        item.style.borderColor = "rgb(255, 150, 138)"
+                    }
                 }
             }
 
