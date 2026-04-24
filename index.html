@@ -309,7 +309,6 @@
             var GiveOn = false
 
             function Click(Num){
-                console.log('dd')
                 if(GiveOn == false){
                     if (Ready[0] == Num){
                         item = document.getElementById(Ready[0])
@@ -376,13 +375,12 @@
                 Code = Code.substr(1)
                 if (Code == '111111'){Code = "000000"; openFile()}
                 if (Code == '222222'){Code = "000000"; Score()}
-                if (Code == '333333'){Code = "000000"; PartScore()}
-                if (Code == '444444'){Code = "000000"; Give()}
+                if (Code == '333333'){Code = "000000"; Give()}
+                if (Code == '444444'){Code = "000000"; PartScore()}
                 if (Code == '555555'){Code = "000000"; Save()}
             }
 
             function Cancel(){
-                Code = "000000"
                 if (Ready.length != 0){
                     item = document.getElementById(Ready[0])
                     item.textContent = "-"
@@ -455,8 +453,8 @@
 
             function Give(){
                 GiveOn = !GiveOn
-                if (GiveOn == true){document.getElementById('A4').textContent = '!'}
-                if (GiveOn == false){document.getElementById('A4').textContent = '4'}
+                if (GiveOn == true){document.getElementById('A3').textContent = '!'}
+                if (GiveOn == false){document.getElementById('A3').textContent = '-'}
             }
 
             function Save(){
